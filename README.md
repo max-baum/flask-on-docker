@@ -22,12 +22,29 @@ Thirdly, the gif can be previewed on a newly established page!
 
 This service has both development and production environments, and consequently there are two seperate compose files that can be used to bring the service up. Please note, that for security reasons, some files containing sensitive information were not uploaded to this repository, and they must be added separetely by you to ensure complete and proper functionality of the web service.
 
-** Development **
+**Development**
 
 You can build the development side of the web service by simply bringing up the development container using the following command:
 
 ```
-$ docker-compose up -d --build
+$ docker compose up -d --build
 ```
 
 Ensure no other competing containers are running, and use port forwarding if necessary. 
+
+**Production**
+
+Follow the code below to bring up the production containers.
+
+First, bring down any pre-existing containers:
+
+```
+$docker compose down -v
+```
+
+Then, bring up your production containers:
+
+```
+$ docker compose -f docker-compose.prod.yml up -d --build
+$ docker compose -f docker-compose.prod.yml exec web python manage.py create_db
+```
