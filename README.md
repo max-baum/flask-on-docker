@@ -17,6 +17,8 @@ Secondly, a gif is uploaded
 Thirdly, the gif can be previewed on a newly established page!
 ![Gif is viewed on webservice](sc3.png)
 
+Alternatively, view the gif below to see the upload process
+![Gif uploadprocess](dockergif.gif)
 
 ## Build instructions
 
